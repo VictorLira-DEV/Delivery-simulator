@@ -43,7 +43,6 @@ document.getElementById("submit").addEventListener("click", function (e) {
     precoTotal
   ] = pedidoGerado;
 
-
   const usernameValue = username.value.trim();
   const telefoneValue = telefone.value.trim();
   const enderecoValue = endereco.value.trim();
