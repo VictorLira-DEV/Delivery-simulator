@@ -5,9 +5,8 @@ const overlay = document.querySelector(".overlay");
 const popUp = document.querySelector(".pop-up");
 const popUpConfirmation = document.querySelector(".pop-up-confirmacao");
 const usuario = [];
-const pedidoGerado = [];
 const cardapio = [];
-const pedido = [];
+const pedidoGerado = [];
 
 document.getElementById("submit").addEventListener("click", function (e) {
   e.preventDefault();
@@ -17,6 +16,12 @@ document.getElementById("submit").addEventListener("click", function (e) {
   usuario.push(document.querySelector('#endereco'));
   const [username, telefone, endereco] = usuario;
 
+  cardapio.push(document.querySelector(".cardapioOptions"));
+  cardapio.push(document.querySelector(".bebidasOptions"));
+  cardapio.push(document.querySelector(".tamanhoOptions"));
+  const [cardapioOptions, bebidasOptions, tamanhoOptions] = cardapio;
+
+  const pedido = [];
   pedido.push(Number(document.querySelector("#cardapio").value));
   pedido.push(Number(document.querySelector("#bebidas").value));
   pedido.push(Number(document.querySelector("#tamanho").value));
@@ -28,7 +33,8 @@ document.getElementById("submit").addEventListener("click", function (e) {
   pedidoGerado.push(document.querySelector(".refresco"));
   pedidoGerado.push(document.querySelector(".localizacao"));
   pedidoGerado.push(document.querySelector(".preco"));
-  const [
+
+  let [
     clienteInput,
     pizzaInput,
     tamanhoInput,
@@ -37,10 +43,6 @@ document.getElementById("submit").addEventListener("click", function (e) {
     precoTotal
   ] = pedidoGerado;
 
-  cardapio.push(document.querySelector(".cardapioOptions"));
-  cardapio.push(document.querySelector(".bebidasOptions"));
-  cardapio.push(document.querySelector(".tamanhoOptions"));
-  const [cardapioOptions, bebidasOptions, tamanhoOptions] = cardapio;
 
   const usernameValue = username.value.trim();
   const telefoneValue = telefone.value.trim();
@@ -101,7 +103,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
           enderecoHost: enderecoInput,
           precoHost: precoTotal,
         });
-        resetForm(username, telefone, endereco)
+        resetForm();
       }
     }
   }
@@ -109,7 +111,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
 
 cancelarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
-  resetarPedido(pedidoGerado);
+  resetPopUp()
 });
 
 closeBottom.addEventListener("click", () => {
@@ -119,7 +121,7 @@ closeBottom.addEventListener("click", () => {
 confirmarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
   openModal(overlay, popUpConfirmation);
-  resetarPedido(pedidoGerado);
+  resetPopUp()
 });
 
 function setSuccessFor(input) {
@@ -149,19 +151,21 @@ function closeModal(modal, popUp) {
   modal.classList.remove("active");
 }
 
-function resetarPedido(pedidoGerado) {
+function resetPopUp() {
   pedidoGerado.forEach((item) => {
     item.innerHTML = ''
-  })
-  
-}
+  });
+};
 
 function resetForm() {
   usuario.forEach((item) => {
     item.value = ""
   });
-}
 
+  cardapio.forEach((item) => {
+    item.value = ''
+  });
+}
 
 const restaurant = {
   nome: "Pizzaria",
