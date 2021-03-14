@@ -1,0 +1,113 @@
+.button a {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #a10f02;
+  position: absolute;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+  width: 100%;
+  height: 100%;
+  background-color: #b91405;
+  z-index: -1;
+  transition: 0.7s ease;
+}
+
+.btn1 {
+  background-color: #a10f02;
+}
+
+.btn1:before {
+  width: 0;
+  height: 100%;
+}
+
+.btn1:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.correct {
+  width: 170px;
+}
+
+.cancelar {
+  width: 170px;
+}
+
+.confirmar {
+  border-radius: 4px;
+  background: rgb(3, 187, 3);
+  position: relative;
+  z-index: 1;
+}
+
+.cancelar {
+  border-radius: 4px;
+  background: #a10f02;
+  position: relative;
+  z-index: 1;
+}
+
+/*efeitos */
+.btn {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: none;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 10px 35px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: none;
+  position: relative;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.7s ease;
+}
+
+.correct:before {
+  width: 0;
+  height: 100%;
+  background: rgb(6, 223, 6);
+}
+
+.correct:hover:before {
+  width: 100%;
+}
+
+.cancelar:before {
+  width: 0;
+  height: 100%;
+  background: #ce1605;
+}
+
+.cancelar:hover:before {
+  width: 100%;
+}

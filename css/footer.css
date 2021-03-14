@@ -1,0 +1,26 @@
+footer {
+  padding: 0 100px;
+  height: 60px;
+  width: 100%;
+  color: white;
+  background-color: #a10f02;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer h1 {
+  font-size: 20px;
+  margin-right: 70px;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer ul li {
+  list-style: none;
+  margin-left: 20px;
+}

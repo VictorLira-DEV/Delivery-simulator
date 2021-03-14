@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Victor Lira" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="simulador de delivery" />
+    <meta name="keywords" content="fast food, pizza, refrigerantes, comida, pizzaria" />
+    <link rel="shortcut icon" type="image/ico" href="./imagens/icon.ico" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
+    <link rel="stylesheet" href="./css/banner.css" />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/responsividade.css" />
+    <title>Delivery Simulator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="overlay"></div>
+      <div class="pop-up ">
+        <div class="header">
+          <h1>Seu Pedido</h1>
+        </div>
+        <!--header-->
+        <div class="pedido">
+          <ul>
+            <li>Cliente : <span class="text-inside cliente"></span></li>
+            <li>Pizza Sabor : <span class="text-inside lanche"></span></li>
+            <li>Tamanho : <span class="text-inside comprimento"></span></li>
+            <li>Bebidas : <span class="text-inside refresco"></span></li>
+            <li>Endereço : <span class="text-inside localizacao"></span></li>
+            <li>Valor total a pagar: <span class="text-inside preco"></span> Reais</li></li>
+          </ul>
+        </div>
+        <!--pedido-->
+        <div class="confirmar-pedido">
+          <div class="confirmar">
+            <button class="btn correct">Confirmar</button>
+          </div>
+          <div class="cancelar">
+            <button class="btn cancelar">Cancelar</button>
+          </div>
+        </div>
+        <!--confirmar-->
+        <div class="logoPop"></div>
+      </div>
+      <div class="pop-up-confirmacao">
+        <h2>Pedido Enviado</h2>
+        <button class="close-bottom">&times;</button>
+        <p>Entraremos em contato quando o entregador estive a caminho</p>
+        <p id="bottom">Obrigado pela preferência</p>
+        <div class="logo-pop-confirmacao"></div>
+      </div>
+      <!--overlay-confirmacao-->
+      <header>
+        <h1>Delivery Simulator</h1>
+      </header>
+      <main>
+        <section class="formulario">
+          <div class="form-container">
+            <div class="header"><h2>Preencha Corretamente</h2></div>
+            <form id="myForm" method="POST">
+              <div class="form-control">
+                <label for="username">Nome</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Nome Completo"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+              </div>
+              <div class="form-control">
+                <label for="username">Telefone</label>
+                <input
+                  type="text"
+                  name="telefone"
+                  id="telefone"
+                  required
+                  placeholder="Telefone"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+              </div>
+              <div class="form-control">
+                <label for="username">Endereço</label>
+                <input
+                  type="text"
+                  name="endereco"
+                  id="endereco"
+                  placeholder="nome da rua, Nº da casa, ponto de referência"
+                  required
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small></small>
+              </div>
+              <div id="submit" class="button btn1">
+                <a href="#">Enviar Pedido</a>
+              </div>
+            </form>
+          </div>
+          <!--form-container-->
+        </section>
+        <!--formulário-->
+
+        <arcticle class="banner-outside">
+          <div class="banner">
+            <ul>
+              <li>Solicite seu pedido abaixo</li>
+              <hr />
+              <li>Estamos a mais de 10 anos no Mercado</li>
+              <li>Qualidade e entrega dentro de prazo</li>
+              <li>Venha nos conhecer, traga sua familia</li>
+              <li>Entre em contato para mais informações</li>
+            </ul>
+            <div class="logo"></div>
+          </div>
+          <section class="menu">
+            <div class="formBox">
+              <article class="select">
+                <select name="cardapio" class="cardapioOptions" id="cardapio">
+                  <option value="" selected disabled>Pizzas</option>
+                  <option value="0">Calabresa</option>
+                  <option value="1">Mozarela</option>
+                  <option value="2">Portuguesa</option>
+                  <option value="3">Frango com - Catupiry</option>
+                  <option value="4">Mista</option>
+                  <option value="5">Marguerita</option>
+                </select>
+              </article>
+
+              <article class="select">
+                <select name="bebidas" class="bebidasOptions" id="bebidas">
+                  <option value="" selected disabled>bebidas</option>
+                  <option value="0">Nenhum</option>
+                  <option value="1">Coca cola 2L - R$ 9</option>
+                  <option value="2">Pepsi 2L - R$ 9</option>
+                  <option value="3">Fanta uva 1L- R$ 7</option>
+                  <option value="4">Fanta Laranja 2L - R$ 7</option>
+                  <optgroup label="Sucos">
+                    <option value="5">Laranja 500Ml - R$ 5</option>
+                    <option value="6">Maracuja 500ml - R$ 5</option>
+                    <option value="7">limão 300ml - R$ 5</option>
+                  </optgroup>
+                </select>
+              </article>
+
+              <article class="select">
+                <select name="tamanho" class="tamanhoOptions" id="tamanho">
+                  <option value="" selected disabled>Tamanho</option>
+                  <option value="0">Gigante - R$ 50</option>
+                  <option value="1">Grande - R$ 40</option>
+                  <option value="2">Média - R$ 30</option>
+                  <option value="3">Pequena - R$ 20</option>
+                </select>
+              </article>
+            </div>
+          </section>
+        </arcticle>
+      </main>
+      <section class="secundario"></section>
+      <footer>
+        <span>Desenvolvido por Victor Lira</span>
+        <ul>
+          <h1>redes Sociais</h1>
+          <li>
+            <a href=""><img src="./imagens/facebook.png" width="30px" /></a>
+          </li>
+          <li>
+            <a href=""><img src="./imagens/instagram.png" width="30px" /></a>
+          </li>
+          <li>
+            <a href=""><img src="./imagens/whatsapp.png" width="30px" /></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/13fdad6b70.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./form.js"></script>
+  </body>
+</html>
