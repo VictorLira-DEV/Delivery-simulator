@@ -4,31 +4,48 @@ const closeBottom = document.querySelector(".close-bottom");
 const overlay = document.querySelector(".overlay");
 const popUp = document.querySelector(".pop-up");
 const popUpConfirmation = document.querySelector(".pop-up-confirmacao");
+const usuario = [];
+const pedidoGerado = [];
+const cardapio = [];
+const pedido = [];
 
 document.getElementById("submit").addEventListener("click", function (e) {
   e.preventDefault();
-  const username = document.getElementById("username");
-  const telefone = document.querySelector("#telefone");
-  const endereco = document.querySelector("#endereco");
 
-  const pizzaIndex = Number(document.querySelector("#cardapio").value);
-  const bebidasIndex = Number(document.querySelector("#bebidas").value);
-  const tamanhoIndex = Number(document.querySelector("#tamanho").value);
+  usuario.push(document.querySelector('#username'));
+  usuario.push(document.querySelector('#telefone'));
+  usuario.push(document.querySelector('#endereco'));
+  const [username, telefone, endereco] = usuario;
 
-  const clienteInput = document.querySelector(".cliente");
-  const pizzaInput = document.querySelector(".lanche");
-  const tamanhoInput = document.querySelector(".comprimento");
-  const bebidaInput = document.querySelector(".refresco");
-  const enderecoInput = document.querySelector(".localizacao");
-  const precoTotal = document.querySelector(".preco");
+  pedido.push(Number(document.querySelector("#cardapio").value));
+  pedido.push(Number(document.querySelector("#bebidas").value));
+  pedido.push(Number(document.querySelector("#tamanho").value));
+  const [pizzaIndex, bebidasIndex, tamanhoIndex] = pedido;
 
-  const cardapioOptions = document.querySelector(".cardapioOptions");
-  const bebidasOptions = document.querySelector(".bebidasOptions");
-  const tamanhoOptions = document.querySelector(".tamanhoOptions");
+  pedidoGerado.push(document.querySelector(".cliente"));
+  pedidoGerado.push(document.querySelector(".lanche"));
+  pedidoGerado.push(document.querySelector(".comprimento"));
+  pedidoGerado.push(document.querySelector(".refresco"));
+  pedidoGerado.push(document.querySelector(".localizacao"));
+  pedidoGerado.push(document.querySelector(".preco"));
+  const [
+    clienteInput,
+    pizzaInput,
+    tamanhoInput,
+    bebidaInput,
+    enderecoInput,
+    precoTotal
+  ] = pedidoGerado;
+
+  cardapio.push(document.querySelector(".cardapioOptions"));
+  cardapio.push(document.querySelector(".bebidasOptions"));
+  cardapio.push(document.querySelector(".tamanhoOptions"));
+  const [cardapioOptions, bebidasOptions, tamanhoOptions] = cardapio;
 
   const usernameValue = username.value.trim();
   const telefoneValue = telefone.value.trim();
   const enderecoValue = endereco.value.trim();
+
   let formValidation = 0;
 
   if (usernameValue === "") {
@@ -84,6 +101,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
           enderecoHost: enderecoInput,
           precoHost: precoTotal,
         });
+        resetForm(username, telefone, endereco)
       }
     }
   }
@@ -91,7 +109,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
 
 cancelarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
-  resetarPedido();
+  resetarPedido(pedidoGerado);
 });
 
 closeBottom.addEventListener("click", () => {
@@ -101,7 +119,7 @@ closeBottom.addEventListener("click", () => {
 confirmarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
   openModal(overlay, popUpConfirmation);
-  resetarPedido();
+  resetarPedido(pedidoGerado);
 });
 
 function setSuccessFor(input) {
@@ -131,21 +149,19 @@ function closeModal(modal, popUp) {
   modal.classList.remove("active");
 }
 
-function resetarPedido() {
-  const clienteInput = document.querySelector(".cliente");
-  const pizzaInput = document.querySelector(".lanche");
-  const tamanhoInput = document.querySelector(".comprimento");
-  const bebidaInput = document.querySelector(".refresco");
-  const enderecoInput = document.querySelector(".localizacao");
-  const precoTotal = document.querySelector(".preco");
-
-  clienteInput.innerHTML = "";
-  pizzaInput.innerHTML = "";
-  tamanhoInput.innerHTML = "";
-  bebidaInput.innerHTML = "";
-  enderecoInput.innerHTML = "";
-  precoTotal.innerHTML = "";
+function resetarPedido(pedidoGerado) {
+  pedidoGerado.forEach((item) => {
+    item.innerHTML = ''
+  })
+  
 }
+
+function resetForm() {
+  usuario.forEach((item) => {
+    item.value = ""
+  });
+}
+
 
 const restaurant = {
   nome: "Pizzaria",
