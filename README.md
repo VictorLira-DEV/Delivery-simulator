@@ -14,8 +14,7 @@ Take a look https://delivery-simulator-js.vercel.app/
 - [technologies](#-technologies)
 - [Contributing](#-Contributing)
 
-
-## About
+## :mag:  About
 
 in this application the user can order his Pizza, soda, pizza size , then the aplication displays the user's order simultaneously. I've this functionality by using vanilla Javascript. I've created a form validation to ensure that all fields are correctly filled. 100% responsive.
 
@@ -29,7 +28,7 @@ All the services were TDD planed, so please make sure to update tests as appropr
 
 ---
 
-## technologies
+## 🛠 technologies
 
 the project was developed using the following technologies
 
