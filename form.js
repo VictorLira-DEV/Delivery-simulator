@@ -11,9 +11,9 @@ const pedidoGerado = [];
 document.getElementById("submit").addEventListener("click", function (e) {
   e.preventDefault();
 
-  usuario.push(document.querySelector('#username'));
-  usuario.push(document.querySelector('#telefone'));
-  usuario.push(document.querySelector('#endereco'));
+  usuario.push(document.querySelector("#username"));
+  usuario.push(document.querySelector("#telefone"));
+  usuario.push(document.querySelector("#endereco"));
   const [username, telefone, endereco] = usuario;
 
   cardapio.push(document.querySelector(".cardapioOptions"));
@@ -40,7 +40,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
     tamanhoInput,
     bebidaInput,
     enderecoInput,
-    precoTotal
+    precoTotal,
   ] = pedidoGerado;
 
   const usernameValue = username.value.trim();
@@ -110,7 +110,7 @@ document.getElementById("submit").addEventListener("click", function (e) {
 
 cancelarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
-  resetPopUp()
+  resetPopUp();
 });
 
 closeBottom.addEventListener("click", () => {
@@ -120,7 +120,7 @@ closeBottom.addEventListener("click", () => {
 confirmarPedido.addEventListener("click", () => {
   closeModal(overlay, popUp);
   openModal(overlay, popUpConfirmation);
-  resetPopUp()
+  resetPopUp();
 });
 
 function setSuccessFor(input) {
@@ -152,17 +152,17 @@ function closeModal(modal, popUp) {
 
 function resetPopUp() {
   pedidoGerado.forEach((item) => {
-    item.innerHTML = ''
+    item.innerHTML = "";
   });
-};
+}
 
 function resetForm() {
   usuario.forEach((item) => {
-    item.value = ""
+    item.value = "";
   });
 
   cardapio.forEach((item) => {
-    item.value = ''
+    item.value = "";
   });
 }
 
