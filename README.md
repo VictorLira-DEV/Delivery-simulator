@@ -40,7 +40,7 @@ the project was developed using the following technologies
 ## Mobile Version
 
 <h1 align="center" >
-    <img src="https://ik.imagekit.io/mcvhbcq4zu/Animated_GIF-downsized_large__1__rgDfvFIk4.gif">
+    <img src="https://ik.imagekit.io/mcvhbcq4zu/deliveryMobile_tKvMmTVZ3.gif">
 </h1>
 
 Created by **Victor lira dev**
