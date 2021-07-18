@@ -6,8 +6,7 @@
 
 # Important
 
-Take a look https://delivery-simulator-js.vercel.app/
-
+Take a look https://delivery-simulator.vercel.app/
 # Sections
 
 - [about](#-About)
