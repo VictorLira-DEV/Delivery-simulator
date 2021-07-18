@@ -1,0 +1,62 @@
+//menu
+@import "./responsive.scss";
+.menu {
+    grid-area: menu;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    grid-area: menu;
+
+    .formBox {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
+        .select {
+            position: relative;
+            display: flex;
+            height: 3em;
+            line-height: 3;
+            overflow: hidden;
+            border-radius: 0.25em;
+
+            &::after {
+                content: "\25BC";
+                color: white;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 1em;
+                background: #2b2e2e;
+                cursor: pointer;
+                pointer-events: none;
+                transition: 0.25s all ease;
+            }
+
+            &:hover::after {
+                color: #23b499;
+            }
+
+            select {
+                width: 200px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+                box-shadow: none;
+                border: 0 !important;
+                background: rgba(230, 220, 220, 0.9);
+                flex: 1;
+                padding: 0 0.5em;
+                color: red;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 1em;
+
+                &::-ms-expand {
+                    display: none;
+                }
+            }
+        }
+    }
+}

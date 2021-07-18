@@ -1,0 +1,81 @@
+@import "./responsive.scss";
+main {
+    background-image: url("../imagens/tampa.jpg");
+    background-position: center;
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        " banner-outside fomulario"
+        " menu fomulario";
+    padding: 40px;
+}
+
+.formulario {
+    grid-area: fomulario;
+    display: flex;
+    justify-content: center;
+
+    .form-container {
+        background-color: #fff;
+        border-radius: 4px;
+        width: 400px;
+        padding: 20px 30px;
+        height: 460px;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    form {
+        position: relative;
+
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+
+            &.success i.fa-check-circle {
+                color: #2ecc71;
+                visibility: visible;
+            }
+
+            &.error i.fa-exclamation-circle {
+                color: red;
+                visibility: visible;
+            }
+
+            &.error input {
+                border: 1px solid red;
+            }
+
+            &.success input {
+                border: 1px solid #0af94b;
+            }
+
+            input {
+                display: block;
+                font-size: 14px;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+            }
+
+            i {
+                position: absolute;
+                visibility: hidden;
+                top: 40px;
+                right: 10px;
+            }
+
+            small {
+                position: absolute;
+                color: red;
+                font-size: 14px;
+            }
+        }
+    }
+}

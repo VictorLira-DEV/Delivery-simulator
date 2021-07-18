@@ -1,0 +1,191 @@
+/*pop up*/
+@import "./responsive.scss";
+.overlay {
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.pop-up {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1.8fr 0.4fr;
+    grid-template-areas:
+        "header"
+        "pedido"
+        "confirmar-pedido";
+    padding: 10px 20px;
+    overflow: hidden;
+    position: fixed;
+    width: 400px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    max-width: 80%;
+
+    &.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        transition: 200ms ease-in-out;
+    }
+
+    .header {
+        grid-area: header;
+        text-align: center;
+
+        button {
+            position: absolute;
+            right: 10px;
+            top: -21px;
+            width: 20px;
+            font-size: 50px;
+            color: red;
+            background: none;
+            border: none;
+        }
+    }
+
+    .pedido {
+        grid-area: pedido;
+        .text-inside {
+            color: red;
+            letter-spacing: 2px;
+        }
+
+        ul {
+            li {
+                list-style: none;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .confirmar-pedido {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        text-align: center;
+
+        .confirmar {
+            grid-area: confirmar-pedido;
+        }
+
+        .confirmar {
+            border-radius: 4px;
+            background: rgb(3, 187, 3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cancelar {
+            border-radius: 4px;
+            background: #a10f02;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+//logo pop up
+
+.logoPop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("../imagens/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 20%;
+    background-size: 90%;
+}
+
+//pop up confirmação
+.pop-up-confirmacao {
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1.6fr 0.3fr;
+    position: fixed;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    height: 200px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    max-width: 80%;
+
+    &.active {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        transition: 200ms ease-in-out;
+    }
+
+    .close-bottom {
+        position: absolute;
+        right: -20px;
+        top: -50px;
+        background: none;
+        border: none;
+        color: red;
+        font-size: 50px;
+    }
+
+    h2 {
+        text-align: center;
+        color: white;
+        background: rgb(90, 185, 90);
+        border-radius: 4px;
+    }
+
+    p {
+        text-align: center;
+        padding-top: 10px;
+        color: red;
+        font-family: "Poppins", sans-serif;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+    }
+
+    p#bottom {
+        padding: 5px;
+        background: rgb(219, 96, 96);
+        color: white;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .logo-pop-confirmacao {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("../imagens/logo.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 20%;
+        background-size: 45%;
+    }
+}
