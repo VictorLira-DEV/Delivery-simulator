@@ -15,7 +15,7 @@ Take a look https://delivery-simulator.vercel.app/
 
 ## :mag:  About
 
-in this application the user can order his Pizza, soda, pizza size , then the aplication displays the user's order simultaneously. I've this functionality by using vanilla Javascript. I've created a form validation to ensure that all fields are correctly filled. 100% responsive.
+in this application the user can order his Pizza, soda, pizza size , then the aplication displays the user's order simultaneously. I've done this functionality by using vanilla Javascript.and I created a form validation to ensure that all fields are correctly filled. 100% responsive.
 
 ---
 
