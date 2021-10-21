@@ -5,7 +5,7 @@
 </h1>
 
 # Important
-## Personal Project
+## 😎 Personal Project
 Take a look https://delivery-simulator.vercel.app/
 # Sections
 
