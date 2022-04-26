@@ -186,6 +186,7 @@ const restaurant = {
         { nome: "Suco", sabor: "Suco de Maracuja", preco: 5 },
         { nome: "Suco", sabor: " Suco Limão", preco: 5 },
     ],
+    
     tamanho: [
         { nome: "Gigante", preco: 50 },
         { nome: "Grande", preco: 40 },
